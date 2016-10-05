@@ -32,7 +32,7 @@ class speaker {
 			'rewrite'               => array( 'slug' => 'speakers' ),
 		);
 
-		register_taxonomy( 'speakers', 'events', $args );
+		register_taxonomy( 'speakers', 'presentations', $args );
 	}
 		// Add term page
 		function convention_magic_taxonomy_add_new_meta_field() {

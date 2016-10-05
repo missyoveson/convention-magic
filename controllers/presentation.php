@@ -18,6 +18,7 @@ class presentation {
 					'not_found_in_trash' => 'No Presentations found in Trash',
 					'menu_name' => 'Presentations'
 				],
+				'taxonomy' => array('category', 'post_tags', 'speakers', 'rooms'),
 				'public'      => true,
 				'has_archive' => true,
 				'supports' => array('title', 'editor', 'excerpt', 'custom-fields','thumbnails', 'page-attributes'),
