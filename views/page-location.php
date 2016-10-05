@@ -2,7 +2,6 @@
 /*
  *  Template Name: Location
  */
-get_header();
 
 if ( have_posts() ) {
 	while ( have_posts() ) {
@@ -12,4 +11,3 @@ if ( have_posts() ) {
 	} // end while
 } // end if
 
-get_footer();
