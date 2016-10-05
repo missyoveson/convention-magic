@@ -22,7 +22,7 @@ class event {
 					'not_found_in_trash' => 'No Events found in Trash',
 					'menu_name' => 'Events'
 				],
-				'taxonomy' => array('category', 'post_tags', 'rooms'),
+				'taxonomy' => array('category', 'post_tag', 'rooms'),
 				'public'      => true,
 				'has_archive' => true,
 				'supports' => array('title', 'editor', 'excerpt', 'custom-fields','thumbnails', 'page-attributes'),
