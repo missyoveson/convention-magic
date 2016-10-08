@@ -36,12 +36,13 @@ class speaker {
 	}
 		// Add term page
 		function convention_magic_taxonomy_add_new_meta_field() {
-		// this will add the custom meta field to the add new term page
 		?>
 		<div class="form-field">
-			<label for="term_meta[custom_term_meta]"><?php _e( 'Image', 'convention-magic' ); ?></label>
-			<input type="text" name="term_meta[custom_term_meta]" id="term_meta[custom_term_meta]" value="">
-			<p class="description"><?php _e( 'Enter a value for this field','convention-magic' ); ?></p>
+			<p>
+				<label for="speaker-image" class="convention-magic-row-title"><?php _e( 'Speaker', 'convention-magic' )?></label>
+				<input type="text" name="speaker-image" id="speaker-image" value="<?php if ( isset ( $convention_magic_meta['meta-image'] ) ) echo $convention_magic_meta['meta-image'][0]; ?>" />
+				<input type="button" id="speaker-image-button" class="button" value="<?php _e( 'Choose or Upload an Image', 'convention-magic' )?>" />
+			</p>
 		</div>
 		<?php
 	}
