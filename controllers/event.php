@@ -31,4 +31,7 @@ class event {
 		);
 
 	}
+	function convention_magic_event_meta(){
+		//add meta fields for app
+	}
 }
