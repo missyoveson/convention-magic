@@ -1,4 +1,5 @@
 <?php
-$wp_query -> have_posts(
-	//get events and presentations
+$args = array(
+	'post_type' => array('event', 'presentation')
 );
+$query = new WP_Query( $args );
