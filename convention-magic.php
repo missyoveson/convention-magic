@@ -12,12 +12,15 @@ License: A "Slug" license name e.g. GPL2
 defined( 'ABSPATH' ) or die( 'No script kitties please!' );
 
 function convention_magic_activation(){
-	if(!function_exists(_add_extra_api_taxonomy_argument)){
-		die("Please install WP-API");
+	// check for plugin using plugin name
+	if ( is_plugin_active( 'json-rest-api/plugin.php' ) ) {
+	  //plugin is activated
+	} else {
+		wp_die( 'Please install the WP-API plugin');
 	}
 }
 
-add_action('init', 'convention_magic_activation');
+add_action('admin-init', 'convention_magic_activation');
 
 function convention_magic_enqueue_scripts(){
 	wp_enqueue_script('script', plugins_url('assets/js/speaker-image.js'), array());
