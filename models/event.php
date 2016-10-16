@@ -1,12 +1,8 @@
 <?php
 
 class event {
-
-	/**
-	 *  Create the event custom post type and set the template
-	 */
-	function convention_magic_event() {
-		register_post_type( 'convention_magic_event',
+    public function convention_magic_event(){
+        register_post_type( 'convention_magic_event',
 			[
 				'labels'      => [
 					'name'          => __( 'Events' ),
@@ -30,10 +26,12 @@ class event {
 				'rewrite'     => [ 'slug' => 'events' ]
 			]
 		);
-        $this->convention_magic_event_meta();
 	}
-    add_action('init', 'convention_magic_event');
-	function convention_magic_event_meta(){
-		//add meta fields for app
-	}
+    public function event_meta_box(){
+
+    }
+    public function event_save(){
+
+    }
+
 }

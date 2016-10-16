@@ -20,6 +20,7 @@ function convention_magic_activation(){
 	} else {
 		wp_die( 'Please install the WP-API plugin');
 	}
+	add_action('init', 'convention_magic_event');
 }
 
 add_action('admin-init', 'convention_magic_activation');

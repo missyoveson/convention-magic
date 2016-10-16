@@ -3,7 +3,7 @@
 
 class room
 {
-    function convention_magic_room()
+    public function convention_magic_room()
     {
         $labels = array(
             'name' => _x('Rooms', 'taxonomy general name', 'convention-magic'),
@@ -28,5 +28,14 @@ class room
             'query_var' => true,
             'rewrite' => array('slug' => 'rooms')
         );
+    }
+    public function add_room(){
+
+    }
+    public function add_meta_box(){
+
+    }
+    public function room_save(){
+
     }
 }

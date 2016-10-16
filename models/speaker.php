@@ -2,7 +2,7 @@
 
 
 class speaker {
-	function convention_magic_speaker(){
+	public function convention_magic_speaker(){
 		$labels = array(
 			'name'                       => _x( 'Speakers', 'taxonomy general name', 'convention-magic' ),
 			'singular_name'              => _x( 'Speaker', 'taxonomy singular name', 'convention-magic' ),
@@ -47,4 +47,13 @@ class speaker {
 		</div>
 		<?php
 	}
+	public function add_speaker(){
+
+	}
+	public function speaker_meta_box(){
+
+    }
+    public function speaker_save(){
+
+    }
 }

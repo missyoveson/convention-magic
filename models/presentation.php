@@ -27,5 +27,10 @@ class presentation {
 			]
 		);
 	}
-    add_action('init', 'convention_magic_presentation');
+    public function presentation_meta_box(){
+
+    }
+    public function presentation_save(){
+
+    }
 }
