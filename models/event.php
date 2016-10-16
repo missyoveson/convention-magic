@@ -1,7 +1,7 @@
 <?php
 
 class event {
-    public function convention_magic_event(){
+    public static function convention_magic_event(){
         register_post_type( 'convention_magic_event',
 			[
 				'labels'      => [
@@ -28,6 +28,7 @@ class event {
 			]
 		);
 	}
+
     public function event_meta_box(){
 
     }

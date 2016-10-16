@@ -2,7 +2,7 @@
 
 
 class speaker {
-	public function convention_magic_speaker(){
+	public static function convention_magic_speaker(){
 		$labels = array(
 			'name'                       => _x( 'Speakers', 'taxonomy general name', 'convention-magic' ),
 			'singular_name'              => _x( 'Speaker', 'taxonomy singular name', 'convention-magic' ),
@@ -33,9 +33,8 @@ class speaker {
 			'query_var'             => true,
 			'rewrite'               => array( 'slug' => 'speakers' ),
 		);
-		$this->convention_magic_taxonomy_add_new_meta_field();
 
-		register_taxonomy( 'speakers', array('presentations'), $args );
+		register_taxonomy( 'speakers', 'presentations', $args );
 	}
 		// Add term page
 		function convention_magic_taxonomy_add_new_meta_field() {

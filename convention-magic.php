@@ -12,18 +12,22 @@ License: A "Slug" license name e.g. GPL2
 defined( 'ABSPATH' ) or die( 'No script kitties please!' );
 
 define('PLUGIN_DIR', dirname(__FILE__). '/');
+include(PLUGIN_DIR . 'controllers/create-post-types.php');
 
-function convention_magic_activation(){
+
+function convention_magic_api(){
 	// check for plugin using plugin name
-	if ( is_plugin_active( 'json-rest-api/plugin.php' ) ) {
-	  //plugin is activated
+	if ( is_plugin_active( 'rest-api/plugin.php' ) ) {
 	} else {
 		wp_die( 'Please install the WP-API plugin');
 	}
-	add_action('init', 'convention_magic_event');
-}
 
-add_action('admin-init', 'convention_magic_activation');
+}
+function convention_magic_activate(){
+    convention_magic_api();
+}
+register_activation_hook(__FILE__, 'convention_magic_activate');
+add_action('init', 'create_post_types');
 
 
 function convention_magic_enqueue_scripts(){

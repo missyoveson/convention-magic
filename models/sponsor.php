@@ -2,7 +2,7 @@
 
 class sponsor
 {
-    public function convention_magic_sponsor(){
+    public static function convention_magic_sponsor(){
         register_post_type( 'convention_magic_sponsor',
             [
                 'labels'      => [
