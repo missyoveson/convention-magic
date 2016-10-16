@@ -12,9 +12,7 @@ License: A "Slug" license name e.g. GPL2
 
 defined( 'ABSPATH' ) or die( 'No script kitties please!' );
 
-include(plugin_dir_path(__FILE__) . 'controllers/event.php');
-include(plugin_dir_path(__FILE__) . 'controllers/presentation.php');
-include(plugin_dir_path(__FILE__) . 'controllers/speaker.php');
+define('PLUGIN_DIR', dirname(__FILE__). '/');
 
 function convention_magic_activation(){
 	// check for plugin using plugin name
