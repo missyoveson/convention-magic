@@ -31,6 +31,7 @@ class speaker {
 			'query_var'             => true,
 			'rewrite'               => array( 'slug' => 'speakers' ),
 		);
+		$this->convention_magic_taxonomy_add_new_meta_field();
 
 		register_taxonomy( 'speakers', 'presentations', $args );
 	}

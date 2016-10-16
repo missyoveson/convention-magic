@@ -29,7 +29,7 @@ class event {
 				'rewrite'     => [ 'slug' => 'events' ]
 			]
 		);
-
+        $this->convention_magic_event_meta();
 	}
 	function convention_magic_event_meta(){
 		//add meta fields for app
