@@ -19,7 +19,7 @@ class speaker {
 			'add_or_remove_items'        => __( 'Add or remove speakers', 'convention-magic' ),
 			'choose_from_most_used'      => __( 'Choose from the most used speakers', 'convention-magic' ),
 			'not_found'                  => __( 'No speakers found.', 'convention-magic' ),
-			'menu_name'                  => __( 'Speakers', 'convention-magic' ),
+			'menu_name'                  => __( 'Speakers', 'convention-magic' )
 		);
 
 		$args = array(
@@ -27,6 +27,9 @@ class speaker {
 			'labels'                => $labels,
 			'show_ui'               => true,
 			'show_admin_column'     => true,
+            'show_in_menu'          => true,
+            'menu_position'         => 5,
+            'menu_icon'             => 'dashicons-businessman',
             'show_in_rest'          => true,
             'rest_base'             => 'speaker',
 			'update_count_callback' => '_update_post_term_count',

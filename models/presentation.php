@@ -16,13 +16,18 @@ class presentation {
 					'search_items' => 'Search Presentations',
 					'not_found' => 'No Presentations Found',
 					'not_found_in_trash' => 'No Presentations found in Trash',
-					'menu_name' => 'Presentations'
+
 				],
-				'taxonomy' => array('category', 'post_tag', 'speakers', 'rooms'),
+				'taxonomies' => array('category', 'post_tag', 'speakers', 'rooms'),
 				'public'      => true,
 				'has_archive' => true,
-                'menu_position' => 22,
+                'show_ui' => true,
+                'show_in_menu' => true,
+                'menu_position' => 5,
+                'menu_icon' => 'dashicons-media-interactive',
+                'menu_name' => 'Presentations',
                 'show_in_rest' => true,
+                'rest_base' => 'presentation',
 				'supports' => array('title', 'editor', 'excerpt', 'custom-fields','thumbnails', 'page-attributes'),
 				'rewrite'     => [ 'slug' => 'presentations' ]
 			]

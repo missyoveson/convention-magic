@@ -21,7 +21,8 @@ class event {
 				'taxonomy' => array('category', 'post_tag', 'rooms'),
 				'public'      => true,
 				'has_archive' => true,
-                'menu_position' => 21,
+                'menu_position' => 5,
+                'menu_icon' => 'dashicons-calendar-alt',
                 'show_in_rest' => true,
 				'supports' => array('title', 'editor', 'excerpt', 'custom-fields','thumbnails', 'page-attributes'),
 				'rewrite'     => [ 'slug' => 'events' ]
