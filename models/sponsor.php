@@ -23,6 +23,7 @@ class sponsor
                 'public'      => true,
                 'has_archive' => true,
                 'menu_position' => 23,
+                'show_in_rest' => true,
                 'supports' => array('title', 'editor', 'excerpt', 'custom-fields','thumbnails', 'page-attributes'),
                 'rewrite'     => [ 'slug' => 'events' ]
             ]

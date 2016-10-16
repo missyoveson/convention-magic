@@ -27,13 +27,15 @@ class speaker {
 			'labels'                => $labels,
 			'show_ui'               => true,
 			'show_admin_column'     => true,
+            'show_in_rest'          => true,
+            'rest_base'             => 'speaker',
 			'update_count_callback' => '_update_post_term_count',
 			'query_var'             => true,
 			'rewrite'               => array( 'slug' => 'speakers' ),
 		);
 		$this->convention_magic_taxonomy_add_new_meta_field();
 
-		register_taxonomy( 'speakers', 'presentations', $args );
+		register_taxonomy( 'speakers', array('presentations'), $args );
 	}
 		// Add term page
 		function convention_magic_taxonomy_add_new_meta_field() {

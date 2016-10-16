@@ -24,10 +24,13 @@ class room
             'labels' => $labels,
             'show_ui' => true,
             'show_admin_column' => true,
+            'show_in_rest' => true,
+            'rest_base' => 'room',
             'update_count_callback' => '_update_post_term_count',
             'query_var' => true,
             'rewrite' => array('slug' => 'rooms')
         );
+        register_taxonomy( 'speakers', array('presentations', 'events'), $args );
     }
     public function add_room(){
 

@@ -22,6 +22,7 @@ class event {
 				'public'      => true,
 				'has_archive' => true,
                 'menu_position' => 21,
+                'show_in_rest' => true,
 				'supports' => array('title', 'editor', 'excerpt', 'custom-fields','thumbnails', 'page-attributes'),
 				'rewrite'     => [ 'slug' => 'events' ]
 			]
