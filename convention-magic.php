@@ -9,7 +9,6 @@ Author: Miss Geek Bunny
 Author URI: http://missgeekbunny.com
 License: A "Slug" license name e.g. GPL2
 */
-
 defined( 'ABSPATH' ) or die( 'No script kitties please!' );
 
 define('PLUGIN_DIR', dirname(__FILE__). '/');
@@ -21,14 +20,9 @@ function convention_magic_activation(){
 	} else {
 		wp_die( 'Please install the WP-API plugin');
 	}
-
-    add_action('init', 'convention_magic_event');
-    add_action('init', 'convention_magic_presentation');
-    add_action('init', 'convention_magic_speaker');
 }
 
 add_action('admin-init', 'convention_magic_activation');
-
 
 
 function convention_magic_enqueue_scripts(){

@@ -25,12 +25,14 @@ class event {
 				'taxonomy' => array('category', 'post_tag', 'rooms'),
 				'public'      => true,
 				'has_archive' => true,
+                'menu_position' => 21,
 				'supports' => array('title', 'editor', 'excerpt', 'custom-fields','thumbnails', 'page-attributes'),
 				'rewrite'     => [ 'slug' => 'events' ]
 			]
 		);
         $this->convention_magic_event_meta();
 	}
+    add_action('init', 'convention_magic_event');
 	function convention_magic_event_meta(){
 		//add meta fields for app
 	}

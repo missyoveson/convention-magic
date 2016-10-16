@@ -21,9 +21,11 @@ class presentation {
 				'taxonomy' => array('category', 'post_tag', 'speakers', 'rooms'),
 				'public'      => true,
 				'has_archive' => true,
+                'menu_position' => 22,
 				'supports' => array('title', 'editor', 'excerpt', 'custom-fields','thumbnails', 'page-attributes'),
 				'rewrite'     => [ 'slug' => 'presentations' ]
 			]
 		);
 	}
+    add_action('init', 'convention_magic_presentation');
 }
