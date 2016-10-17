@@ -27,7 +27,7 @@ function convention_magic_activate(){
     convention_magic_api();
 }
 register_activation_hook(__FILE__, 'convention_magic_activate');
-add_action('init', 'create_post_types');
+add_action('init', 'convention_magic_create_post_types');
 
 
 function convention_magic_enqueue_scripts(){
