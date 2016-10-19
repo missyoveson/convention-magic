@@ -32,6 +32,7 @@ class speaker {
             'menu_icon'             => 'dashicons-businessman',
             'show_in_rest'          => true,
             'rest_base'             => 'speaker',
+			'register_meta_box_cb' => 'convention_magic_speaker_meta_box',
 			'update_count_callback' => '_update_post_term_count',
 			'query_var'             => true,
 			'rewrite'               => array( 'slug' => 'speakers' ),
@@ -40,7 +41,7 @@ class speaker {
 		register_taxonomy( 'speakers', 'presentations', $args );
 	}
 		// Add term page
-		function convention_magic_taxonomy_add_new_meta_field() {
+		function convention_magic_speaker_meta_box() {
 		?>
 		<div class="form-field">
 			<p>
@@ -51,13 +52,7 @@ class speaker {
 		</div>
 		<?php
 	}
-	public function add_speaker(){
-
-	}
-	public function speaker_meta_box(){
-
-    }
-    public function speaker_save(){
+    public function speaker_hooks(){
 
     }
 }

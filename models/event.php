@@ -43,7 +43,7 @@ class event {
         add_meta_box(
             'Name',
             __( 'Event Name', 'convention-magic' ),
-            'event_name_display',
+            'event_name',
             'event',
             'main',
             'high'
@@ -66,13 +66,13 @@ class event {
         );
     }
 
-    function event_name_display($post){
+    function event_name($post){
         wp_nonce_field( plugin_basename( __FILE__ ), 'event_nonce' );
         echo '<label for="event_name">Event Name</label>';
         echo '<input type="text" id="event_name" name="event_name" placeholder="The name of the convention event" />';
     }
     function event_time_set(){
-
+        //TODO:: Write function to set the event time in something that will convert to a C# DateTime variable.
     }
     function event_description(){
         wp_nonce_field( plugin_basename( __FILE__ ), 'event_nonce' );
