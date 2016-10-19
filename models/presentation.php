@@ -26,6 +26,7 @@ class presentation {
                 'menu_position' => 5,
                 'menu_icon' => 'dashicons-media-interactive',
                 'menu_name' => 'Presentations',
+                'register_meta_box_cb' => 'convention_magic_presentation_meta_boxes',
                 'show_in_rest' => true,
                 'rest_base' => 'presentation',
 				'supports' => array('title', 'editor', 'excerpt', 'custom-fields','thumbnails', 'page-attributes'),
@@ -33,10 +34,46 @@ class presentation {
 			]
 		);
 	}
-    public function presentation_meta_box(){
+    public function convention_magic_presentation_meta_boxes(){
+        add_meta_box(
+            'Name',
+            __( 'Presentation Name', 'convention-magic' ),
+            'presentation_name',
+            'presentation',
+            'main',
+            'high'
+        );
+        add_meta_box(
+            'Time',
+            __('Presentation Time', 'convention-magic'),
+            'presentation_time',
+            'presentation',
+            'side',
+            'low'
+        );
+        add_meta_box(
+            'Description',
+            __('Presentation Description', 'convention-magic'),
+            'presentation_description',
+            'presentation',
+            'main',
+            'high'
+        );
+    }
+
+    public function presentation_name(){
 
     }
-    public function presentation_save(){
 
+    public function presentation_time(){
+
+    }
+
+    public function presentation_description(){
+
+    }
+
+    public static function convention_magic_presentation_hooks(){
+        add_action('init', 'convention_magic_presentation');
     }
 }

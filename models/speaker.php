@@ -32,7 +32,7 @@ class speaker {
             'menu_icon'             => 'dashicons-businessman',
             'show_in_rest'          => true,
             'rest_base'             => 'speaker',
-			'register_meta_box_cb' => 'convention_magic_speaker_meta_box',
+			'register_meta_box_cb' => 'convention_magic_speaker_meta_boxes',
 			'update_count_callback' => '_update_post_term_count',
 			'query_var'             => true,
 			'rewrite'               => array( 'slug' => 'speakers' ),
@@ -41,7 +41,7 @@ class speaker {
 		register_taxonomy( 'speakers', 'presentations', $args );
 	}
 		// Add term page
-		function convention_magic_speaker_meta_box() {
+		function convention_magic_speaker_meta_boxes() {
 		?>
 		<div class="form-field">
 			<p>
@@ -50,7 +50,7 @@ class speaker {
 				<input type="button" id="speaker-image-button" class="button" value="<?php _e( 'Choose or Upload an Image', 'convention-magic' )?>" />
 			</p>
 		</div>
-		<?php
+		<?php //TODO:: Add speaker's url
 	}
     public function speaker_hooks(){
 

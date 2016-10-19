@@ -8,4 +8,5 @@ include(PLUGIN_DIR . 'models/room.php');
 function convention_magic_create_post_types(){
     event::convention_magic_event_hooks();
     sponsor::convention_magic_sponsor_hooks();
+    presentation::convention_magic_presentation_hooks();
 }
