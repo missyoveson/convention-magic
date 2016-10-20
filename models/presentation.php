@@ -71,6 +71,19 @@ class presentation {
     public function presentation_time(){
         //TODO:: Create function to set presentation time
         $date = new DateTime();
+        $day = 1;
+        $month = 1;
+        $year = 2016;
+        $hour = 1;
+        $pm = false;
+        $minute = 10;
+        $date -> setDate($year, $month, $day);
+        if($pm && $hour != 12){
+            $hour += 12;
+        } elseif(!pm && $hour==12){
+            $hour = 0;
+        }
+        $date -> setTime($hour, $minute);
     }
 
     public function presentation_description(){
