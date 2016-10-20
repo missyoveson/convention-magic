@@ -73,6 +73,7 @@ class event {
     }
     function event_time_set(){
         //TODO:: Write function to set the event time in something that will convert to a C# DateTime variable.
+        $date = new DateTime();
     }
     function event_description(){
         wp_nonce_field( plugin_basename( __FILE__ ), 'event_nonce' );

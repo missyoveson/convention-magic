@@ -31,13 +31,4 @@ class room
         );
         register_taxonomy( 'rooms', array('presentations', 'events'), $args );
     }
-    public function add_room(){
-
-    }
-    public function add_meta_box(){
-
-    }
-    public function room_save(){
-
-    }
 }

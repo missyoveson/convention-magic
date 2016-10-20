@@ -53,6 +53,6 @@ class speaker {
 		<?php //TODO:: Add speaker's url
 	}
     public function speaker_hooks(){
-
+		//TODO:: Set speaker hooks
     }
 }

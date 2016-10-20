@@ -1,7 +1,10 @@
 <?php
 
 class presentation {
-	public static function convention_magic_presentation(){
+    public function __constructor(){
+
+    }
+	public function convention_magic_presentation(){
 		register_post_type( 'convention_magic_presentation',
 			[
 				'labels'      => [
@@ -62,15 +65,16 @@ class presentation {
     }
 
     public function presentation_name(){
-
+        //TODO:: Create field to set presentation name
     }
 
     public function presentation_time(){
-
+        //TODO:: Create function to set presentation time
+        $date = new DateTime();
     }
 
     public function presentation_description(){
-
+        //TODO:: Create function to display description fields
     }
 
     public static function convention_magic_presentation_hooks(){
