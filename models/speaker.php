@@ -55,11 +55,11 @@ class speaker {
 		</div>
 		<?php
 	}
-	public function speaker_scripts(){
+	public static function speaker_scripts(){
 		wp_enqueue_script('script', plugins_url('assets/js/speaker-image.js'), array());
 	}
     public static function convention_magic_speaker_hooks(){
 		self::convention_magic_speaker();
-		add_action('wp-enqueue-scripts', 'speaker_scripts');
+		add_action('wp-enqueue-scripts', 'speaker::speaker_scripts');
     }
 }

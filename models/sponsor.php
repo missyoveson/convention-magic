@@ -88,11 +88,11 @@ class sponsor
         echo '<input type="text" id="sponsor_url" name="sponsor_url" placeholder="http://" />';
     }
 
-    public function sponsor_scripts(){
+    public static function sponsor_scripts(){
         wp_enqueue_script('script', plugins_url('assets/js/sponsor-image.js'), array());
     }
     public static function convention_magic_sponsor_hooks(){
         add_action('init', 'convention_magic_sponsor');
-        add_action('wp_enqueue_scripts', 'sponsor_scripts');
+        add_action('wp_enqueue_scripts', 'sponsor::sponsor_scripts');
     }
 }
