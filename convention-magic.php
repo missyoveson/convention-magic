@@ -30,8 +30,3 @@ register_activation_hook(__FILE__, 'convention_magic_activate');
 add_action('init', 'convention_magic_create_post_types');
 
 
-function convention_magic_enqueue_scripts(){
-	wp_enqueue_script('script', plugins_url('assets/js/speaker-image.js'), array());
-}
-add_action('wp_enqueue_scripts', 'convention_magic_enqueue_scripts');
-

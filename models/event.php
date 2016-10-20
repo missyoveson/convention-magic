@@ -73,25 +73,11 @@ class event {
     }
     function event_time_set(){
         //TODO:: Write function to set the event time in something that will convert to a C# DateTime variable.
-        $date = new DateTime();
-        $day = 1;
-        $month = 1;
-        $year = 2016;
-        $hour = 1;
-        $pm = false;
-        $minute = 10;
-        $date -> setDate($year, $month, $day);
-        if($pm && $hour != 12){
-            $hour += 12;
-        } elseif(!pm && $hour==12){
-            $hour = 0;
-        }
-        $date -> setTime($hour, $minute);
+        $date = time::set_time();
     }
     function event_description($post){
-        wp_nonce_field( plugin_basename( __FILE__ ), 'event_nonce' );
         echo '<label for="event_description">Event Description</label>';
-        echo '<input type="text" id="event_description" name="event_description"/>';
+        echo '<textarea type="text" id="event_description" name="event_description"/>';
     }
 
     public static function convention_magic_event_hooks(){

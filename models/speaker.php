@@ -25,6 +25,7 @@ class speaker {
 		$args = array(
 			'hierarchical'          => false,
 			'labels'                => $labels,
+            'public'                => true,
 			'show_ui'               => true,
 			'show_admin_column'     => true,
             'show_in_menu'          => true,
@@ -40,19 +41,25 @@ class speaker {
 
 		register_taxonomy( 'speakers', 'presentations', $args );
 	}
-		// Add term page
+
 		function convention_magic_speaker_meta_boxes() {
-		?>
+			wp_nonce_field( plugin_basename( __FILE__ ), 'speaker_nonce' );?>
 		<div class="form-field">
 			<p>
 				<label for="speaker-image" class="convention-magic-row-title"><?php _e( 'Speaker', 'convention-magic' )?></label>
 				<input type="text" name="speaker-image" id="speaker-image" value="<?php if ( isset ( $convention_magic_meta['meta-image'] ) ) echo $convention_magic_meta['meta-image'][0]; ?>" />
 				<input type="button" id="speaker-image-button" class="button" value="<?php _e( 'Choose or Upload an Image', 'convention-magic' )?>" />
 			</p>
+            <label for="speaker_url">Speaker\'s Website</label>
+            <input type="text" id="speaker_url" name="speaker_url" placeholder="http://" />
 		</div>
-		<?php //TODO:: Add speaker's url
+		<?php
 	}
-    public function speaker_hooks(){
-		//TODO:: Set speaker hooks
+	public function speaker_scripts(){
+		wp_enqueue_script('script', plugins_url('assets/js/speaker-image.js'), array());
+	}
+    public static function convention_magic_speaker_hooks(){
+		self::convention_magic_speaker();
+		add_action('wp-enqueue-scripts', 'speaker_scripts');
     }
 }

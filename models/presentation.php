@@ -65,29 +65,19 @@ class presentation {
     }
 
     public function presentation_name(){
-        //TODO:: Create field to set presentation name
+        wp_nonce_field( plugin_basename( __FILE__ ), 'presentation_nonce' );
+        echo '<label for="presentation_name">Presentation Name</label>';
+        echo '<input type="text" id="presentation_name" name="presentation_name" placeholder="The name of the convention presentation or talk" />';
     }
 
     public function presentation_time(){
         //TODO:: Create function to set presentation time
-        $date = new DateTime();
-        $day = 1;
-        $month = 1;
-        $year = 2016;
-        $hour = 1;
-        $pm = false;
-        $minute = 10;
-        $date -> setDate($year, $month, $day);
-        if($pm && $hour != 12){
-            $hour += 12;
-        } elseif(!pm && $hour==12){
-            $hour = 0;
-        }
-        $date -> setTime($hour, $minute);
+       $date = time::set_time();
     }
 
     public function presentation_description(){
-        //TODO:: Create function to display description fields
+        echo '<label for="presentation_description">Presentation Description</label>';
+        echo '<textarea type="text" id="presentation_description" name="presentation_description"/>';
     }
 
     public static function convention_magic_presentation_hooks(){

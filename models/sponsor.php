@@ -65,22 +65,34 @@ class sponsor
         );
     }
     public function sponsor_name(){
-        //TODO:: Write function to create sponsor name
+        wp_nonce_field( plugin_basename( __FILE__ ), 'sponsor_nonce' );
+        echo '<label for="sponsor_name">Sponsor Name</label>';
+        echo '<input type="text" id="sponsor_name" name="sponsor_name" placeholder="The name of the sponsor" />';
     }
 
     public function sponsor_image_upload(){
         //TODO:: Write function to upload and include an image
+    ?><label for="sponsor-image" class="convention-magic-row-title"><?php _e( 'Sponsor', 'convention-magic' )?></label>
+    <input type="text" name="sponsor-image" id="sponsor-image" value="<?php if ( isset ( $convention_magic_meta['meta-image'] ) ) echo $convention_magic_meta['meta-image'][0]; ?>" />
+    <input type="button" id="sponsor-image-button" class="button" value="<?php _e( 'Choose or Upload an Image', 'convention-magic' )?>" />
+    <?php
     }
 
     public function sponsor_description(){
-        //TODO:: Write function to create description
+        echo '<label for="sponsor_description">Sponsor\'s Organization Description</label>';
+        echo '<textarea type="text" id="sponsor_description" name="sponsor_description"/>';
     }
 
     public function sponsor_url(){
-        //TODO:: Write function to save a url to the sponsor's website.
+        echo '<label for="sponsor_url">Sponsor\'s Website</label>';
+        echo '<input type="text" id="sponsor_url" name="sponsor_url" placeholder="http://" />';
     }
 
+    public function sponsor_scripts(){
+        wp_enqueue_script('script', plugins_url('assets/js/sponsor-image.js'), array());
+    }
     public static function convention_magic_sponsor_hooks(){
         add_action('init', 'convention_magic_sponsor');
+        add_action('wp_enqueue_scripts', 'sponsor_scripts');
     }
 }

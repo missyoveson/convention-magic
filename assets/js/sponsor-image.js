@@ -1,38 +1,38 @@
 jQuery(document).ready(function($){
 
     // Instantiates the variable that holds the media library frame.
-    var speaker_image_frame;
+    var sponsor_image_frame;
 
     // Runs when the image button is clicked.
-    $('#speaker-image-button').click(function(e){
+    $('#sponsor-image-button').click(function(e){
 
         // Prevents the default action from occuring.
         e.preventDefault();
 
         // If the frame already exists, re-open it.
-        if ( speaker_image_frame ) {
-            speaker_image_frame.open();
+        if ( sponsor_image_frame ) {
+            sponsor_image_frame.open();
             return;
         }
 
         // Sets up the media library frame
-        speaker_image_frame = wp.media.frames.meta_image_frame = wp.media({
+        sponsor_image_frame = wp.media.frames.meta_image_frame = wp.media({
             title: speaker_image.title,
             button: { text:  speaker_image.button },
             library: { type: 'image' }
         });
 
         // Runs when an image is selected.
-        speaker_image_frame.on('select', function(){
+        sponsor_image_frame.on('select', function(){
 
             // Grabs the attachment selection and creates a JSON representation of the model.
-            var media_attachment = speaker_image_frame.state().get('selection').first().toJSON();
+            var media_attachment = sponsor_image_frame.state().get('selection').first().toJSON();
 
             // Sends the attachment URL to our custom image input field.
-            $('#speaker-image').val(media_attachment.url);
+            $('#sponsor-image').val(media_attachment.url);
         });
 
         // Opens the media library frame.
-        speaker_image_frame.open();
+        sponsor_image_frame.open();
     });
 });
