@@ -7,7 +7,7 @@ class time
         $date -> setDate($year, $month, $day);
         if($pm && $hour != 12){
             $hour += 12;
-        } elseif(!pm && $hour==12){
+        } elseif(!$pm && $hour==12){
             $hour = 0;
         }
         $date -> setTime($hour, $minute);
