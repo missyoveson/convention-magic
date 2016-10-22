@@ -39,7 +39,7 @@ class speaker {
 			'rewrite'               => array( 'slug' => 'speakers' ),
 		);
 
-		register_taxonomy( 'speakers', 'presentations', $args );
+		register_taxonomy( 'cm-speaker', 'cm-presentation', $args );
 	}
 
 		function convention_magic_speaker_meta_boxes() {
@@ -55,11 +55,5 @@ class speaker {
 		</div>
 		<?php
 	}
-	public static function speaker_scripts(){
-		wp_enqueue_script('script', plugins_url('assets/js/speaker-image.js'), array());
-	}
-    public static function convention_magic_speaker_hooks(){
-		self::convention_magic_speaker();
-		add_action('wp-enqueue-scripts', 'speaker::speaker_scripts');
-    }
+
 }

@@ -31,13 +31,19 @@ function convention_magic_api(){
 function convention_magic_activate(){
     convention_magic_api();
 }
+
 register_activation_hook(__FILE__, 'convention_magic_activate');
 add_action('init', 'event::convention_magic_create_event');
 add_action('init', 'presentation::convention_magic_presentation');
 add_action('init', 'sponsor::convention_magic_sponsor');
-add_action('wp_enqueue_scripts', 'sponsor::sponsor_scripts');
+add_action('wp_enqueue_scripts', 'convention_magic_scripts');
 add_action('rest-api-init', 'api::convention_magic_rest_route');
-//room::convention_magic_room();
-//speaker::convention_magic_speaker();
+add_action('convention_magic_activate', 'room::convention_magic_room');
+add_action('convention_magic_activate', 'speaker::convention_magic_speaker');
+function convention_magic_scripts(){
+    wp_enqueue_script(PLUGIN_DIR . 'assets/js/speaker-image.js');
+    wp_enqueue_script(PLUGIN_DIR . 'assets/js/sponsor-image.js');
+    wp_enqueue_script(PLUGIN_DIR . 'assets/js/api.js');
+}
 
 

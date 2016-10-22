@@ -24,7 +24,7 @@ class presentation {
                 );
                 $args = array(
                     'labels' => $labels,
-                    'taxonomies' => array('speakers', 'rooms'),
+                    'taxonomies' => array('cm-speaker', 'cm-room'),
                     'public'      => true,
                     'has_archive' => true,
                     'show_ui' => true,
@@ -34,7 +34,8 @@ class presentation {
                     'menu_name' => 'Presentations',
                     'register_meta_box_cb' => 'presentation::convention_magic_presentation_meta_boxes',
                     'show_in_rest' => true,
-                    'rest_base' => 'presentation',
+                    'rest_base' => 'presentations',
+                    'rest_controller_class' => 'WP_REST_Posts_Controller',
                     'supports' => array('title', 'editor', 'page-attributes'),
                     'rewrite'     => [ 'slug' => 'presentations' ]
                 );

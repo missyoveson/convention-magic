@@ -2,16 +2,15 @@
 
 class api
 {
-<?php
     function convention_magic_rest_route() {
-        register_rest_route( 'convention-magic/', '/author/(?P<id>\d+)', array(
+        register_rest_route( 'convention-magic/v1', '/convention-magic', array(
             'methods' => 'GET',
             'callback' => 'convention_magic_api_callback',
         ) );
     }
     function convention_magic_api_callback( WP_REST_Request $request ) {
         // You can access parameters via direct array access on the object:
-        $param = $request['some_param'];
+        $param = $request['event'];
 
         // Or via the helper method:
         $param = $request->get_param( 'some_param' );

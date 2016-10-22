@@ -25,6 +25,8 @@ class sponsor
             'menu_position' => 5,
             'menu_icon' => 'dashicons-money',
             'show_in_rest' => true,
+            'rest_controller_class' => 'WP_REST_Posts_Controller',
+            'rest_base' => 'sponsors',
             'register_meta_box_cb' => 'sponsor::convention_magic_sponsor_meta_boxes',
             'supports' => array('title', 'editor', 'thumbnails', 'page-attributes'),
             'rewrite'     => [ 'slug' => 'events' ]
@@ -63,8 +65,5 @@ class sponsor
         echo '<input type="text" id="sponsor_url" name="sponsor_url" placeholder="http://" />';
     }
 
-    public static function sponsor_scripts(){
-        wp_enqueue_script('script', plugins_url('assets/js/sponsor-image.js'), array());
-    }
 
 }
