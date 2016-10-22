@@ -36,6 +36,7 @@ add_action('init', 'event::convention_magic_create_event');
 add_action('init', 'presentation::convention_magic_presentation');
 add_action('init', 'sponsor::convention_magic_sponsor');
 add_action('wp_enqueue_scripts', 'sponsor::sponsor_scripts');
+add_action('rest-api-init', 'api::convention_magic_rest_route');
 //room::convention_magic_room();
 //speaker::convention_magic_speaker();
 

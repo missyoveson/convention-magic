@@ -38,6 +38,7 @@ class event {
             'register_meta_box_cb' => 'event::convention_magic_event_meta_boxes',
             'show_in_rest' => true,
             'rest_base' => 'events',
+            'rest_controller_class' => 'WP_REST_Posts_Controller',
             'description' => '',
             'supports' => array('title', 'editor','revisions', 'page_attributes'),
             'rewrite' => ['slug' => 'events']
