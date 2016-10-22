@@ -37,6 +37,7 @@ class event {
             'menu_icon' => 'dashicons-calendar-alt',
             'register_meta_box_cb' => 'event::convention_magic_event_meta_boxes',
             'show_in_rest' => true,
+            'rest_base' => 'events',
             'description' => '',
             'supports' => array('title', 'editor','revisions', 'page_attributes'),
             'rewrite' => ['slug' => 'events']
