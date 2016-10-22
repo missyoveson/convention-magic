@@ -28,7 +28,7 @@ class event {
         );
         $args = array(
             'labels' => $labels,
-            'taxonomy' => array('category', 'post_tag', 'rooms'),
+            'taxonomy' => array('category', 'post_tag', 'cm-room'),
             'public' => true,
             'show_ui' => true,
             'show_in_menu' => true,

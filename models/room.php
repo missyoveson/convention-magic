@@ -29,6 +29,6 @@ class room
             'query_var' => true,
             'rewrite' => array('slug' => 'room')
         );
-        register_taxonomy( 'rooms', array('presentations', 'events'), $args );
+        register_taxonomy( 'cm-room', array('cm-presentation', 'cm-event'), $args );
     }
 }
