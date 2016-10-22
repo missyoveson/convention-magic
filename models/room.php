@@ -25,6 +25,7 @@ class room
             'show_admin_column' => true,
             'show_in_rest' => true,
             'rest_base' => 'room',
+            'rest_controller_class' => 'WP_REST_Terms_Controller',
             'update_count_callback' => '_update_post_term_count',
             'query_var' => true,
             'rewrite' => array('slug' => 'room')

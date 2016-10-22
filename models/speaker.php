@@ -33,6 +33,7 @@ class speaker {
             'menu_icon'             => 'dashicons-businessman',
             'show_in_rest'          => true,
             'rest_base'             => 'speaker',
+			'rest_controller_class' => 'WP_REST_Terms_Controller',
 			'register_meta_box_cb' => 'convention_magic_speaker_meta_boxes',
 			'update_count_callback' => '_update_post_term_count',
 			'query_var'             => true,
