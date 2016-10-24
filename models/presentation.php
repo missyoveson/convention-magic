@@ -1,6 +1,6 @@
 <?php
-if(!class_exists('time')){
-    include(PLUGIN_DIR . 'controllers/time.php');
+if(!class_exists('schedule')){
+    include(PLUGIN_DIR . 'controllers/schedule.php');
 }
 class presentation {
     public function __construct(){
@@ -56,13 +56,15 @@ class presentation {
     static function presentation_time(){
         wp_nonce_field( plugin_basename( __FILE__ ), 'presentation_nonce' );
         //TODO:: Create function to set presentation time
-        $minute = 12;
-        $pm = false;
-        $hour = 12;
-        $day = 12;
-        $month =12;
-        $year =12;
-       $date = time::set_time($year, $month, $day, $hour, $pm, $minute);
+        $the_date = schedule::set_date();
+        $the_time = schedule::set_time();
+        $minute = $the_time[1];
+        $pm = $the_time[2];
+        $hour = $the_time[0];
+        $day = $the_date[1];
+        $month = $the_date[0];
+        $year = $the_date[2];
+        $date = schedule::set_schedule($year, $month, $day, $hour, $pm, $minute);
     }
 
 }
