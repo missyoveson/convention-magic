@@ -9,6 +9,6 @@ class api
         ) );
     }
     function convention_magic_api_callback( WP_REST_Request $request ) {
-        //TODO::Do something for the api
+        //TODO::Do something with the api
     }
 }

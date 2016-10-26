@@ -13,9 +13,9 @@ class schedule
         $date -> setTime($hour, $minute);
         return $date;
     }
-    public function set_date(){
+    public static function set_date(){
         ?>
-            <label for="set_date">Date</label>
+            <p>Date of Event: </p>
             <select name="cm-month" class="cm-month">
                 <option value="1">January</option>
                 <option value="2">February</option>
@@ -31,34 +31,47 @@ class schedule
                 <option value="12">December</option>
             </select>
             <select name="cm-day" class="cm-day">
+                <?php for($i = 1; $i <= 31; $i++)
+                    {
+                    echo '<option>' . $i . '</option>';
+                    }?>
             </select>
             <select name="cm-year" class="cm-year">
+                <?php for($i = 2016; $i <= 2036; $i++){
+                    echo '<option>' . $i . '</option>';
+                }?>
             </select>
-        <?php $month = $_POST['cm-month'];
+        <?php /*$month = $_POST['cm-month'];
         $day = $_POST['cm-day'];
         $year = $_POST['cm-year'];
         $set_date = array($month, $day, $year);
-        return $set_date;
+        return $set_date;*/
     }
-    public function set_time(){
-        ?> <select name="cm-hour" class="cm-hour">
+    public static function set_time(){
+        ?>
+        <p>Time of Event: </p>
+        <select name="cm-hour" class="cm-hour">
     <?php for($i = 1; $i <= 12; $i++) {
             echo '<option>' . $i . '</option>';
             } ?>
         </select>
         <select name="cm-minute" class="cm-minute">
         <?php for($i = 00; $i < 60; $i++){
-            echo '<option>' . $i . '</option>';
+            if($i < 10){
+                echo '<option>0' . $i . '</option>';
+            } else {
+                echo '<option>' . $i . '</option>';
+            }
         } ?>
         </select>
         <select name="cm-pm" class="cm-pm">
             <option value="false">AM</option>
             <option value="true">PM</option>
         </select>
-    <? $hour = $_POST['cm-hour'];
+    <? /*$hour = $_POST['cm-hour'];
         $minute = $_POST['cm-minute'];
         $pm = $_POST['cm-pm'];
         $the_time = array($hour, $minute, $pm);
-        return $the_time;
+        return $the_time;*/
     }
 }
