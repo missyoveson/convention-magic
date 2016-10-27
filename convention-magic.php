@@ -41,9 +41,12 @@ add_action('rest-api-init', 'api::convention_magic_rest_route');
 add_action('convention_magic_activate', 'room::convention_magic_room');
 add_action('convention_magic_activate', 'speaker::convention_magic_speaker');
 function convention_magic_scripts(){
-    wp_enqueue_script(PLUGIN_DIR . 'assets/js/speaker-image.js');
-    wp_enqueue_script(PLUGIN_DIR . 'assets/js/sponsor-image.js');
-    wp_enqueue_script(PLUGIN_DIR . 'assets/js/api.js');
+    wp_register_script('speaker-image', PLUGIN_DIR . 'assets/js/speaker-image.js');
+    wp_register_script('time-day-adjustment', PLUGIN_DIR . 'assets/js/time-day-adjustment.js', 'jquery');
+    wp_enqueue_script('speaker-image');
+    wp_enqueue_script('time-day-adjustment');
+    wp_enqueue_style('style', PLUGIN_DIR . 'assets/css/style.css');
 }
+
 
 

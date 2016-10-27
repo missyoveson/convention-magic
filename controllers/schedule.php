@@ -32,8 +32,15 @@ class schedule
             </select>
             <select name="cm-day" class="cm-day">
                 <?php for($i = 1; $i <= 31; $i++)
-                    {
-                    echo '<option>' . $i . '</option>';
+                    { if($i == 29){
+                        echo '<option class="twenty-nine">' . $i . '</option>';
+                    } elseif($i == 30){
+                        echo '<option class="thirty">' . $i . '</option>';
+                    } elseif($i == 31){
+                        echo '<option class="thirty-one">' . $i . '</option>';
+                    } else {
+                        echo '<option>' . $i . '</option>';
+                    }
                     }?>
             </select>
             <select name="cm-year" class="cm-year">
@@ -56,7 +63,7 @@ class schedule
             } ?>
         </select>
         <select name="cm-minute" class="cm-minute">
-        <?php for($i = 00; $i < 60; $i++){
+        <?php for($i = 0; $i < 60; $i++){
             if($i < 10){
                 echo '<option>0' . $i . '</option>';
             } else {

@@ -35,14 +35,6 @@ class sponsor
     }
     public static function convention_magic_sponsor_meta_boxes(){
         add_meta_box(
-          'Logo',
-            __('Logo Image', 'convention-magic'),
-            'sponsor::sponsor_image_upload',
-            'cm-sponsor',
-            'side',
-            'low'
-        );
-        add_meta_box(
             'Url',
             __('Sponsor\'s Website', 'convention-magic'),
             'sponsor::sponsor_url',
@@ -50,13 +42,6 @@ class sponsor
             'normal',
             'low'
         );
-    }
-
-    public static function sponsor_image_upload(){
-    ?><label for="sponsor-image" class="convention-magic-row-title"><?php _e( 'Sponsor', 'convention-magic' )?></label>
-    <input type="text" name="sponsor-image" id="sponsor-image" value="<?php if ( isset ( $convention_magic_meta['meta-image'] ) ) echo $convention_magic_meta['meta-image'][0]; ?>" />
-    <input type="button" id="sponsor-image-button" class="button" value="<?php _e( 'Choose or Upload an Image', 'convention-magic' )?>" />
-    <?php
     }
 
     public static function sponsor_url(){
