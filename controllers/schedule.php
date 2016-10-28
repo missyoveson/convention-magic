@@ -16,7 +16,7 @@ class schedule
     public static function set_date(){
         ?>
             <p>Date of Event: </p>
-            <select name="cm-month" class="cm-month">
+            <select name="cm-month" id="cm-month">
                 <option value="1">January</option>
                 <option value="2">February</option>
                 <option value="3">March</option>
@@ -30,7 +30,7 @@ class schedule
                 <option value="11">November</option>
                 <option value="12">December</option>
             </select>
-            <select name="cm-day" class="cm-day">
+            <select name="cm-day" id="cm-day">
                 <?php for($i = 1; $i <= 31; $i++)
                     { if($i == 29){
                         echo '<option class="twenty-nine">' . $i . '</option>';
@@ -43,7 +43,7 @@ class schedule
                     }
                     }?>
             </select>
-            <select name="cm-year" class="cm-year">
+            <select name="cm-year" id="cm-year">
                 <?php for($i = 2016; $i <= 2036; $i++){
                     echo '<option>' . $i . '</option>';
                 }?>
@@ -57,12 +57,12 @@ class schedule
     public static function set_time(){
         ?>
         <p>Time of Event: </p>
-        <select name="cm-hour" class="cm-hour">
+        <select name="cm-hour" id="cm-hour">
     <?php for($i = 1; $i <= 12; $i++) {
             echo '<option>' . $i . '</option>';
             } ?>
         </select>
-        <select name="cm-minute" class="cm-minute">
+        <select name="cm-minute" id="cm-minute">
         <?php for($i = 0; $i < 60; $i++){
             if($i < 10){
                 echo '<option>0' . $i . '</option>';
@@ -71,7 +71,7 @@ class schedule
             }
         } ?>
         </select>
-        <select name="cm-pm" class="cm-pm">
+        <select name="cm-pm" id="cm-pm">
             <option value="false">AM</option>
             <option value="true">PM</option>
         </select>
