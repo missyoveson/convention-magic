@@ -12,24 +12,16 @@ License: A "Slug" license name e.g. GPL2
 defined( 'ABSPATH' ) or die( 'No script kitties please!' );
 
 define('PLUGIN_DIR', dirname(__FILE__). '/');
+require_once(PLUGIN_DIR . 'assets/inc/class-tgm-plugin-activation.php');
 include(PLUGIN_DIR . 'models/event.php');
 include(PLUGIN_DIR . 'models/presentation.php');
 include(PLUGIN_DIR . 'models/room.php');
 include(PLUGIN_DIR . 'models/sponsor.php');
 include(PLUGIN_DIR . 'models/speaker.php');
+include(PLUGIN_DIR . 'controllers/plugins.php');
 
 
-
-function convention_magic_api(){
-	if ( is_plugin_active( 'rest-api/plugin.php' ) ) {
-
-	} else {
-		wp_die( 'Please install the WP-API plugin');
-	}
-
-}
 function convention_magic_activate(){
-    convention_magic_api();
 }
 
 register_activation_hook(__FILE__, 'convention_magic_activate');
@@ -40,6 +32,7 @@ add_action('wp_enqueue_scripts', 'convention_magic_scripts');
 add_action('rest-api-init', 'api::convention_magic_rest_route');
 add_action('convention_magic_activate', 'room::convention_magic_room');
 add_action('convention_magic_activate', 'speaker::convention_magic_speaker');
+add_action( 'tgmpa_register', 'plugins::convention_magic_register_required_plugins' );
 function convention_magic_scripts(){
     wp_register_script('speaker-image', PLUGIN_DIR . 'assets/js/speaker-image.js');
     wp_register_script('time-day-adjustment', PLUGIN_DIR . 'assets/js/time-day-adjustment.js', 'jquery');
