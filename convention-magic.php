@@ -40,6 +40,3 @@ function convention_magic_scripts(){
     wp_enqueue_script('time-day-adjustment');
     wp_enqueue_style('style', PLUGIN_DIR . 'assets/css/style.css');
 }
-
-
-
