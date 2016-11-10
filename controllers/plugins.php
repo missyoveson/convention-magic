@@ -29,6 +29,12 @@ class plugins
                 'required'  => true
             ),
             array(
+                'name'      => 'Oauth1',
+                'slug'      => 'oauth',
+                'source'    => 'https://github.com/WP-API/OAuth1/archive/master.zip',
+                'required'  => true
+            ),
+            array(
                 'name' => 'Basic Auth',
                 'slug' => 'basic-auth',
                 'source' => 'https://github.com/WP-API/Basic-Auth/archive/master.zip',
