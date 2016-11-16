@@ -16,7 +16,6 @@ require_once(PLUGIN_DIR . 'assets/inc/class-tgm-plugin-activation.php');
 include(PLUGIN_DIR . 'models/event.php');
 include(PLUGIN_DIR . 'models/presentation.php');
 include(PLUGIN_DIR . 'models/room.php');
-include(PLUGIN_DIR . 'models/sponsor.php');
 include(PLUGIN_DIR . 'models/speaker.php');
 include(PLUGIN_DIR . 'assets/inc/plugins.php');
 
@@ -27,7 +26,6 @@ function convention_magic_activate(){
 register_activation_hook(__FILE__, 'convention_magic_activate');
 add_action('init', 'event::convention_magic_create_event');
 add_action('init', 'presentation::convention_magic_presentation');
-add_action('init', 'sponsor::convention_magic_sponsor');
 add_action('wp_enqueue_scripts', 'convention_magic_scripts');
 add_action('rest-api-init', 'api::convention_magic_rest_route');
 add_action('convention_magic_activate', 'room::convention_magic_room');
