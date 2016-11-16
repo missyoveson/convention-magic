@@ -9,4 +9,3 @@ $query = new WP_Query( $args );
 
 ?>
 </table>
-    
