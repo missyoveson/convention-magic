@@ -1,8 +1,5 @@
 <?php
 require_once(PLUGIN_DIR . 'assets/inc/class-tgm-plugin-activation.php');
-
-class plugins
-{
     /**
      * Register the required plugins for this plugin
      *
@@ -61,7 +58,7 @@ class plugins
             'dismissable'  => true,                    // If false, a user cannot dismiss the nag message.
             'dismiss_msg'  => '',                      // If 'dismissable' is false, this message will be output at top of nag.
             'is_automatic' => false,                   // Automatically activate plugins after installation or not.
-            'message'      => '',                      // Message to output right before the plugins table.
+            'message'      => 'Please enable these plugins to allow for the Convention Magic system to work to its full capabilities',                      // Message to output right before the plugins table.
 
             /*
             'strings'      => array(
@@ -142,6 +139,4 @@ class plugins
         );
 
         tgmpa( $plugins, $config );
-    }
-
 }

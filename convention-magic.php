@@ -18,7 +18,7 @@ include(PLUGIN_DIR . 'models/presentation.php');
 include(PLUGIN_DIR . 'models/room.php');
 include(PLUGIN_DIR . 'models/sponsor.php');
 include(PLUGIN_DIR . 'models/speaker.php');
-include(PLUGIN_DIR . 'controllers/plugins.php');
+include(PLUGIN_DIR . 'assets/inc/plugins.php');
 
 
 function convention_magic_activate(){
@@ -32,7 +32,7 @@ add_action('wp_enqueue_scripts', 'convention_magic_scripts');
 add_action('rest-api-init', 'api::convention_magic_rest_route');
 add_action('convention_magic_activate', 'room::convention_magic_room');
 add_action('convention_magic_activate', 'speaker::convention_magic_speaker');
-add_action( 'tgmpa_register', 'plugins::convention_magic_register_required_plugins' );
+add_action( 'tgmpa_register', 'convention_magic_register_required_plugins' );
 function convention_magic_scripts(){
     wp_register_script('speaker-image', PLUGIN_DIR . 'assets/js/speaker-image.js');
     wp_register_script('time-day-adjustment', PLUGIN_DIR . 'assets/js/time-day-adjustment.js', 'jquery');
