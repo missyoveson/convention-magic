@@ -1,3 +1,4 @@
+<table id="schedule">
 <?php
 $args = array(
 	'post_type' => array('event', 'presentation'),
@@ -6,3 +7,6 @@ $args = array(
 );
 $query = new WP_Query( $args );
 
+?>
+</table>
+    
