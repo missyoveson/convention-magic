@@ -21,7 +21,7 @@ class room
         $args = array(
             'hierarchical' => false,
             'labels' => $labels,
-            'public' => false,
+            'public' => true,
             'show_admin_column' => true,
             'show_in_rest' => true,
             'rest_base' => 'rooms',
