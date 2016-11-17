@@ -46,11 +46,8 @@ class speaker {
 		function convention_magic_speaker_meta_boxes() {
 			wp_nonce_field( plugin_basename( __FILE__ ), 'speaker_nonce' );?>
 		<div class="form-field">
-			<p>
-				<label for="speaker-image" class="convention-magic-row-title"><?php _e( 'Speaker', 'convention-magic' )?></label>
-				<input type="text" name="speaker-image" id="speaker-image" value="<?php if ( isset ( $convention_magic_meta['meta-image'] ) ) echo $convention_magic_meta['meta-image'][0]; ?>" />
-				<input type="button" id="speaker-image-button" class="button" value="<?php _e( 'Choose or Upload an Image', 'convention-magic' )?>" />
-			</p>
+			<label for="speaker_gravatar">Speaker\'s Gravatar Email</label>
+			<input type="text" id="speaker_gravatar" name="speaker_gravatar" />
             <label for="speaker_url">Speaker\'s Website</label>
             <input type="text" id="speaker_url" name="speaker_url" placeholder="http://" />
 		</div>
