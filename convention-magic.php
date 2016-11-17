@@ -28,8 +28,8 @@ add_action('init', 'event::convention_magic_create_event');
 add_action('init', 'presentation::convention_magic_presentation');
 add_action('wp_enqueue_scripts', 'convention_magic_scripts');
 add_action('rest-api-init', 'api::convention_magic_rest_route');
-add_action('convention_magic_activate', 'room::convention_magic_room');
-add_action('convention_magic_activate', 'speaker::convention_magic_speaker');
+add_action('init', 'room::convention_magic_room');
+add_action('init', 'speaker::convention_magic_speaker');
 add_action( 'tgmpa_register', 'convention_magic_register_required_plugins' );
 function convention_magic_scripts(){
     wp_register_script('time-day-adjustment', PLUGIN_DIR . 'assets/js/time-day-adjustment.js', 'jquery');
