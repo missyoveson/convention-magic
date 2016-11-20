@@ -50,6 +50,13 @@ class presentation {
             'side',
             'low'
         );
+        add_meta_box(
+            'Speaker',
+            __('Presentation Speaker', 'convention-magic'),
+            'presentation::presentation_speaker_selection',
+            'cm-presentation',
+            'side'
+        );
     }
 
 
@@ -67,4 +74,26 @@ class presentation {
         $date = schedule::set_schedule($year, $month, $day, $hour, $pm, $minute);
     }
 
+    static function presentation_speaker_selection(){
+        $args = array(
+        'show_option_all'         => null, // string
+        'show_option_none'        => null, // string
+        'hide_if_only_one_author' => null, // string
+        'orderby'                 => 'display_name',
+        'order'                   => 'ASC',
+        'include'                 => null, // string
+        'exclude'                 => null, // string
+        'multi'                   => false,
+        'show'                    => 'display_name',
+        'echo'                    => true,
+        'selected'                => false,
+        'include_selected'        => false,
+        'name'                    => 'user', // string
+        'id'                      => null, // integer
+        'class'                   => null, // string
+        'blog_id'                 => $GLOBALS['blog_id'],
+        'who'                     => null // string
+        );
+        wp_dropdown_users($args);
+    }
 }
