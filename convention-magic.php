@@ -20,7 +20,6 @@ require_once(PLUGIN_DIR . 'assets/inc/class-tgm-plugin-activation.php');
 include(PLUGIN_DIR . 'models/event.php');
 include(PLUGIN_DIR . 'models/presentation.php');
 include(PLUGIN_DIR . 'models/room.php');
-include(PLUGIN_DIR . 'models/speaker.php');
 include(PLUGIN_DIR . 'assets/inc/plugins.php');
 
 /*Activation Code*/
@@ -35,7 +34,6 @@ add_action('wp_enqueue_scripts', 'convention_magic_scripts');
 add_action('admin_enqueue_scripts', 'convention_magic_admin_scripts');
 add_action('rest-api-init', 'api::convention_magic_rest_route');
 add_action('init', 'room::convention_magic_room');
-add_action('init', 'speaker::convention_magic_speaker');
 add_action( 'tgmpa_register', 'convention_magic_register_required_plugins' );
 
 /*Enqueue Scripts and Styles*/
