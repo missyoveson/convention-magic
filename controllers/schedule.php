@@ -48,11 +48,9 @@ class schedule
                     echo '<option>' . $i . '</option>';
                 }?>
             </select>
-        <?php /*$month = $_POST['cm-month'];
-        $day = $_POST['cm-day'];
-        $year = $_POST['cm-year'];
+        <?php
         $set_date = array($month, $day, $year);
-        return $set_date;*/
+        return $set_date;
     }
     public static function set_time(){
         ?>

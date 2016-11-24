@@ -72,7 +72,7 @@ class presentation {
         $month = $the_date[0];
         $year = $the_date[2];
         $date = schedule::set_schedule($year, $month, $day, $hour, $pm, $minute);
-    }
+	    }
 
     static function presentation_speaker_selection(){
         $args = array(
