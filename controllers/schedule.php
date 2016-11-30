@@ -49,6 +49,9 @@ class schedule
                 }?>
             </select>
         <?php
+        $month = get_option('cm-month');
+        $day = get_option('cm-day');
+        $year = get_option('cm-year');
         $set_date = array($month, $day, $year);
         return $set_date;
     }
@@ -73,10 +76,10 @@ class schedule
             <option value="false">AM</option>
             <option value="true">PM</option>
         </select>
-    <? /*$hour = $_POST['cm-hour'];
-        $minute = $_POST['cm-minute'];
-        $pm = $_POST['cm-pm'];
+    <?  $hour = get_option('cm-hour');
+        $minute = get_option('cm-minute');
+        $pm = get_option('cm-pm');
         $the_time = array($hour, $minute, $pm);
-        return $the_time;*/
+        return $the_time;
     }
 }

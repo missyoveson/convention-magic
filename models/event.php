@@ -63,15 +63,15 @@ class event {
     {
         wp_nonce_field(plugin_basename(__FILE__), 'event_nonce');
         //TODO:: Write function to set the event time in something that will convert to a C# DateTime variable.
-        /*$the_date = */schedule::set_date();
-        /*$the_time = */schedule::set_time();
-        /*$minute = $the_time[1];
+        $the_date = schedule::set_date();
+        $the_time = schedule::set_time();
+        $minute = $the_time[1];
         $pm = $the_time[2];
         $hour = $the_time[0];
         $day = $the_date[1];
         $month = $the_date[0];
         $year =$the_date[2];
-        $date = schedule::set_schedule($year, $month, $day, $hour, $pm, $minute);*/
+        schedule::set_schedule($year, $month, $day, $hour, $pm, $minute);
     }
 
 
