@@ -9,8 +9,8 @@ class presentation {
 	static function convention_magic_presentation(){
 
 				$labels = array(
-					'name'          => __( 'Presentations' ),
-					'singular_name' => __( 'Presentation' ),
+					'name'          => __( 'Presentations', 'convention-magic' ),
+					'singular_name' => __( 'Presentation', 'convention-magic' ),
 					'add_new' => 'Add New Presentation',
 					'add_new_item' => 'Add New Presentation',
 					'edit_item' => 'Edit Presentation',
@@ -36,7 +36,7 @@ class presentation {
                     'show_in_rest' => true,
                     'rest_base' => 'presentations',
                     'rest_controller_class' => 'WP_REST_Posts_Controller',
-                    'supports' => array('title', 'editor', 'page-attributes'),
+                    'supports' => array('title', 'editor', 'revisions', 'page-attributes'),
                     'rewrite'     => [ 'slug' => 'presentations' ]
                 );
         register_post_type('cm-presentation', $args);

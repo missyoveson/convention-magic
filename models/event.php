@@ -5,11 +5,10 @@ if(!class_exists('schedule')){
 class event {
     public function __construct()
     {
-        $this->hooks();
-        $this->convention_magic_create_event();
+        $this->convention_magic_event();
     }
 
-    static function convention_magic_create_event()
+    static function convention_magic_event()
     {
         $labels = array(
             'name' => __('Events', 'convention-magic'),
@@ -23,25 +22,23 @@ class event {
             'search_items' => 'Search Events',
             'not_found' => 'No Events Found',
             'not_found_in_trash' => 'No Events found in Trash',
-            'menu_name' => 'Events',
-            'parent_item_colon' => '',
         );
         $args = array(
             'labels' => $labels,
-            'taxonomy' => array('category', 'post_tag', 'cm-room'),
+            'taxonomy' => array('category', 'cm-room'),
             'public' => true,
             'show_ui' => true,
             'show_in_menu' => true,
             'has_archive' => true,
-            'menu_position' => 5,
+            'menu_position' => 7,
+            'menu_name' => 'Events',
             'menu_icon' => 'dashicons-calendar-alt',
             'register_meta_box_cb' => 'event::convention_magic_event_meta_boxes',
             'show_in_rest' => true,
             'rest_base' => 'events',
             'rest_controller_class' => 'WP_REST_Posts_Controller',
-            'description' => '',
             'supports' => array('title', 'editor','revisions', 'page_attributes'),
-            'rewrite' => ['slug' => 'events', 'with_front' => false ]
+            'rewrite' => ['slug' => 'events']
         );
         register_post_type('cm-event', $args);
     }

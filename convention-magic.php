@@ -28,7 +28,7 @@ function convention_magic_activate(){
 
 /*Action and activation hooks*/
 register_activation_hook(__FILE__, 'convention_magic_activate');
-add_action('init', 'event::convention_magic_create_event');
+add_action('init', 'event::convention_magic_event');
 add_action('init', 'presentation::convention_magic_presentation');
 add_action('wp_enqueue_scripts', 'convention_magic_scripts');
 add_action('admin_enqueue_scripts', 'convention_magic_admin_scripts');
